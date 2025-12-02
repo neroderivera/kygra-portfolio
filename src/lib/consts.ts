@@ -40,6 +40,5 @@ export const quotes = [
     "Life is a journey that must be traveled no matter how bad the roads and accommodations.",
     "狂った世界では、狂った人々だけが正気である。<br />In a mad world, only the mad are sane.",
     "The blood of the heroes is closer to God than the ink of the philosophers and the prayers of the faithful",
-    //"Be radical, have principles, be absolute, be that which the bourgeoisie calls an extremist: give yourself without counting or calculating, don't accept what they call ‘the reality of life' and act in such a way that you won't be accepted by that kind of ‘life'"
-    
+    //"Be radical, have principles, be absolute, be that which the bourgeoisie calls an extremist: give yourself without counting or calculating, don't accept what they call ‘the reality of life' and act in such a way that you won't be accepted by that kind of ‘life', do not give up the principle of stride"
     ];

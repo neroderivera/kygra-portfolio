@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import Writings from "./pages/Writings";
-import WritingPost from "./pages/Post";
+import Post from "./pages/Post";
 import Projects from "./pages/Projects";
 import CV from "./pages/CV";
 import NotFound from "./pages/NotFound";
@@ -33,7 +33,7 @@ const App = () => (
             path="/writings/:slug"
             element={
               <Layout>
-                <WritingPost />
+                <Post />
               </Layout>
             }
           />
