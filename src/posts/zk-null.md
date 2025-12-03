@@ -1,11 +1,9 @@
 ---
 title: "The zkNull Project"
-date: "2025-11-30"
 description: "Why I built a privacy primitive in an age of total financial surveillance, and why the transparency of public blockchains is a bug, not a feature."
 tags: ["cryptography", "ethereum"]
 published: true
 ---
-
 
 ## The Panopticon on the Blockchain
 
@@ -21,7 +19,8 @@ If you're a business, you can't negotiate deals when your competitors are watchi
 
 ## The Philosophy of Zero Knowledge
 
-The core philosophy is simple: **Privacy is a primitive and non-negotiable right.**
+The core philosophy is simple:  
+**Privacy is a primitive and non-negotiable right.**
 
 If you don't have privacy at the base layer, you don't have a functional cryptocurrency. For me it stands as both a double entendre for both the tech behind it, but also the right for private transacting.
 

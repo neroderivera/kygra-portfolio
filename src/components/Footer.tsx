@@ -33,9 +33,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full max-w-3xl mx-auto pt-4 pb-10 sm:pb-14 text-center border-t">
+    <footer className="w-full max-w-3xl mx-auto pt-4 pb-10 sm:pb-14 text-center">
 
-    <span className="flex items-center gap-4 mt-12">
+    <span className="flex items-center py-12 pt-16 
+    border-t border-gray-300">
       <ArrowLeft 
         className={`w-6 h-6 transition-all duration-300 ${
           prevQuote ? 'hover:translate-x-2 hover:cursor-pointer hover:scale-110' : 'opacity-50 cursor-not-allowed scale-75'}`} 
