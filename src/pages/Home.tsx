@@ -20,7 +20,7 @@ const Home = () => {
 
           <p className="text-muted-foreground">
           Currently developing zkNull, a zero-knowledge private infrastructure on Ethereum. 
-          <br/>Also working on the first technical drafts for on-chain agentic AI, capable of performing autonomous financial decisions on behalf of people on-chain.
+          <br/>Also working on the first technical drafts for on-chains AI agents, capable of performing autonomous financial operations on behalf of people.
           </p>
         </div>
 

@@ -49,7 +49,7 @@ const CV = () => {
             Curriculum Vitae
           </h1>
           <p className="text-lg text-muted-foreground">
-            My professional experience and qualifications.
+            My experience and qualifications.
           </p>
         </div>
         <button
