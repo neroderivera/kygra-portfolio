@@ -13,25 +13,26 @@ const projects: Project[] = [
     title: "zkNull",
     description:
       "zkNull is a privacy coin with a dedicated privacy layer built on top of the zkEVM.",
-    techStack: ["Solidity", "NextJS", "zkSnarks", "Foundry"],
+    techStack: ["Solidity", "zkSNARKs", "Circom","Foundry"],
     githubUrl: "https://github.com/kygura/zknull",
     liveUrl: "https://zknull.xyz",
   },
   {
+    title: "Equilibria",
+    description:
+      "An algorithmic flatcoin with a built-in tranching system pegged to supply market dynamics.",
+    techStack: ["Solidity", "NextJS", "Hardhat"],
+    githubUrl: "https://github.com/kygura/equilibria-protocol",
+    liveUrl: "https://equilibria.cash",
+  },
+/*   {
     title: "Nyx",
     description:
-      "A decentralized social media platform that is censorship-resistant and privacy-focused.",
-    techStack: ["NextJS", "gun.js", "IPFS"],
+      "A decentralised social media app with a closed economy and a built-in prediction market.",
+    techStack: [],
     githubUrl: "https://github.com/kygura/nyx",
     liveUrl: "https://nyxusd.xyz",
-  },
-  {
-    title: "AlphaFlow",
-    description:
-      "A visualization dashboard for visualizing market data at a glance.",
-    techStack: ["React", "hyperliquid-sdk"],
-    githubUrl: "https://github.com",
-  },
+  }, */
 ];
 
 const Projects = () => {
@@ -39,7 +40,7 @@ const Projects = () => {
     <div className="px-6 md:px-12 lg:px-16 py-16 md:py-24 max-w-5xl animate-fade-in">
       <h1 className="text-5xl md:text-6xl font-display font-light mb-4">Software Projects</h1>
       <p className="text-lg text-muted-foreground mb-16">
-        A selection of things I've built and/or am currently working on.
+        A selection of projects I'm currently building.
       </p>
 
       <div className="space-y-16">

@@ -1,7 +1,7 @@
 ---
 title: "The zkNull Project"
 description: "Why I built a privacy primitive in an age of total financial surveillance, and why the transparency of public blockchains is a bug, not a feature."
-tags: ["cryptography", "ethereum"]
+tags: ["cryptography"]
 published: true
 ---
 
