@@ -28,7 +28,8 @@ const CV = () => {
     "Frontend": ["React/Next.js", "Tailwind CSS"],
     "Backend": ["Express/Hono", "SQL", "Solidity"],
     "Tools & DevOps": ["Git", "Docker"],
-    "Soft Skills": ["Creative Writing", "Asset Manager", "Discretionary Trading", "Project Lead"],
+    "Soft Skills": ["Creative Writing", "Asset Manager & Discretionary Trading", "Solo Development", 
+    "Passionate Communicator"],
   };
 
   const downloadPDF = () => {
