@@ -1,11 +1,9 @@
-
-
 export const QUOTES_ARRAY = [
     "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.",
     "Livet kan kun forstås baglæns; men det må leves forlæns. <br>Life can only be understood backwards; but it must be lived forwards.",
     "La liberté, c'est ce que vous faites de ce qui a été fait de vous.<br>Freedom is what you do with what's been done to you.",
     "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
-    "Tu ne seras jamais heureux si tu continues à chercher en quoi consiste le bonheur. Tu ne vivras jamais si tu cherches le sens de la vie. <br>You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.",
+    "You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.",
     "賢者の足跡をたどるな。賢者が目指したものを目指せ。<br>Do not seek to follow in the footsteps of the wise; seek what they sought.",
     "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
     "L'homme n'est rien d'autre que ce qu'il se fait. <br>Man is nothing else but what he makes of himself.",
@@ -39,5 +37,24 @@ export const QUOTES_ARRAY = [
     "Life is a journey that must be traveled no matter how bad the roads and accommodations.",
     "狂った世界では、狂った人々だけが正気である。<br>In a mad world, only the mad are sane.",
     "The blood of the heroes is closer to God than the ink of the philosophers and the prayers of the faithful",
-    //"Be radical, have principles, be absolute, be that which the bourgeoisie calls an extremist: give yourself without counting or calculating, don't accept what they call ‘the reality of life' and act in such a way that you won't be accepted by that kind of ‘life', do not give up the principle of stride"
-    ];
+
+    // Added below
+    "Existence precedes essence.",
+    "Hell is other people.",
+    "He who climbs upon the highest mountains laughs at all tragedies, real or imaginary.",
+    "The wound is the place where the light enters you.",
+    "No tree can grow to heaven unless its roots reach down to hell.",
+    "One must imagine Sisyphus happy.",
+    "What we fear doing most is usually what we most need to do.",
+    "If you gaze long into an abyss, the abyss also gazes into you.",
+    "The greatest burden a man can bear is the unfulfilled potential of his own soul.",
+    "To have become what one is, one must not have the faintest notion what one is.",
+    "When we are no longer able to change a situation, we are challenged to change ourselves.",
+    "The privilege of a lifetime is to become who you truly are.",
+    "Out of suffering have emerged the strongest souls; the most massive characters are seared with scars.",
+    "Loneliness does not come from having no one around, but from being unable to communicate the things that matter.",
+    "He who fears he will suffer, already suffers from his fear.",
+    "All the world's a stage, and all the men and women merely players.",
+    "You become responsible, forever, for what you have tamed.",
+    "Do what you can, with what you have, where you are."
+];
