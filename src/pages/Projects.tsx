@@ -25,13 +25,21 @@ const projects: Project[] = [
     githubUrl: "https://github.com/kygura/equilibria-protocol",
     liveUrl: "https://equilibria.cash",
   },
+  {
+    title: "Gaia",
+    description:
+      "A map app for discovery: Mapping places of interest and planning trips with the assistance of LLM agents.",
+    techStack: ["Google Maps", "OpenMaps", "Deepseek", "Claude", "React"],
+    githubUrl: "https://github.com/kygura/gaia",
+    liveUrl: "https://gaia-flame.vercel.app/",
+  },
 /*   {
     title: "Nyx",
     description:
       "A decentralised social media app with a closed economy and a built-in prediction market.",
     techStack: [],
     githubUrl: "https://github.com/kygura/nyx",
-    liveUrl: "https://nyxusd.xyz",
+    liveUrl: "https://nyx.xyz",
   }, */
 ];
 
