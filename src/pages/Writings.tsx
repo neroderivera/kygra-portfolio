@@ -28,7 +28,7 @@ const Writings = () => {
           onClick={() => setSelectedTag(null)}
           className={`px-4 py-1.5 text-sm rounded-full transition-all duration-300 border ${selectedTag === null
             ? "bg-primary text-primary-foreground border-primary shadow-sm"
-            : "bg-secondary/30 text-muted-foreground border-transparent hover:bg-secondary hover:text-foreground hover:border-border/50"
+            : "bg-white/80 dark:bg-secondary/50 text-muted-foreground border-border/40 shadow-sm hover:bg-white dark:hover:bg-secondary hover:text-foreground hover:border-primary/30"
             }`}
         >
           All
@@ -39,7 +39,7 @@ const Writings = () => {
             onClick={() => setSelectedTag(tag)}
             className={`px-4 py-1.5 text-sm rounded-full transition-all duration-300 border ${selectedTag === tag
               ? "bg-primary text-primary-foreground border-primary shadow-sm"
-              : "bg-secondary/30 text-muted-foreground border-transparent hover:bg-secondary hover:text-foreground hover:border-border/50"
+              : "bg-white/80 dark:bg-secondary/50 text-muted-foreground border-border/40 shadow-sm hover:bg-white dark:hover:bg-secondary hover:text-foreground hover:border-primary/30"
               }`}
           >
             {tag}

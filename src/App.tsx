@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import Writings from "./pages/Writings";
 import Post from "./pages/Post";
 import Projects from "./pages/Projects";
-import CV from "./pages/CV";
+
 import NotFound from "./pages/NotFound";
 import Guestbook from "./pages/Guestbook";
 import Artifacts from "./pages/Artifacts";
@@ -61,14 +61,7 @@ const App = () => (
               </Layout>
             }
           />
-          <Route
-            path="/cv"
-            element={
-              <Layout>
-                <CV />
-              </Layout>
-            }
-          />
+
           <Route
             path="/guestbook"
             element={
