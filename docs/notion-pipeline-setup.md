@@ -38,8 +38,8 @@ Your posts database must include the following properties:
    ```
    https://kygra.xyz/api/notion-webhook
    ```
-4. Subscribe to events: **page.updated**
-5. Copy the **Signing secret** → this is your `WEBHOOK_SECRET`.
+4. Subscribe to events: **page.properties_updated** and **page.created**
+5. Complete the verification handshake. Copy the **verification token** → this is your `NOTION_VERIFICATION_TOKEN`.
 
 ---
 
@@ -60,10 +60,10 @@ Add the following variables for **Production**, **Preview**, and **Development**
 
 | Variable         | Value                          |
 | ---------------- | ------------------------------ |
-| `NOTION_SECRET`  | *(from step 1)*                |
-| `WEBHOOK_SECRET` | *(from step 3)*                |
-| `GITHUB_TOKEN`   | *(from step 4)*                |
-| `GITHUB_REPO`    | `kygura/kygra-portfolio`       |
+| `NOTION_SECRET`              | *(from step 1)*                |
+| `NOTION_VERIFICATION_TOKEN`  | *(from step 3)*                |
+| `GITHUB_TOKEN`               | *(from step 4)*                |
+| `GITHUB_REPO`                | `kygura/kygra-portfolio`       |
 
 ---
 
@@ -78,7 +78,7 @@ Add the following variables for **Production**, **Preview**, and **Development**
 
 ## Troubleshooting
 
-- **401 from webhook**: Double-check that `WEBHOOK_SECRET` matches the signing secret in your Notion integration settings.
+- **401 from webhook**: Double-check that `NOTION_VERIFICATION_TOKEN` matches the verification token from your Notion integration's webhook handshake.
 - **Post not appearing**: Ensure the database is shared with the integration (step 1.5) and that the **Published** checkbox is checked.
 - **GitHub commit fails**: Verify `GITHUB_TOKEN` has Contents read+write permission on the correct repository.
 - **Slug collisions**: Slugs are derived from the page title. If two pages have the same title, the second publish will overwrite the first.

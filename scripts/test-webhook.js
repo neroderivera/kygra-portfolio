@@ -2,7 +2,7 @@
  * Smoke-test script for the Notion webhook handler.
  *
  * Usage:
- *   1. Create a .env file in the project root with WEBHOOK_SECRET=<your secret>
+ *   1. Create a .env file in the project root with NOTION_VERIFICATION_TOKEN=<your token>
  *   2. Replace PASTE_A_REAL_NOTION_PAGE_ID_HERE below with an actual Notion page ID
  *   3. Start the local Vercel dev server:  npx vercel dev
  *   4. Run this script:  node scripts/test-webhook.js
@@ -35,13 +35,13 @@ if (fs.existsSync(envPath)) {
 
 // ── Configuration ────────────────────────────────────────────────────────────
 
-const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
+const VERIFICATION_TOKEN = process.env.NOTION_VERIFICATION_TOKEN;
 const TARGET_URL =
   process.env.WEBHOOK_URL || "http://localhost:3000/api/notion-webhook";
 
-if (!WEBHOOK_SECRET) {
+if (!VERIFICATION_TOKEN) {
   console.error(
-    "ERROR: WEBHOOK_SECRET is not set. Add it to a .env file or export it.",
+    "ERROR: NOTION_VERIFICATION_TOKEN is not set. Add it to a .env file or export it.",
   );
   process.exit(1);
 }
@@ -49,7 +49,7 @@ if (!WEBHOOK_SECRET) {
 // ── Build payload ────────────────────────────────────────────────────────────
 
 const payload = {
-  type: "page.updated",
+  type: "page.properties_updated",
   entity: {
     id: "PASTE_A_REAL_NOTION_PAGE_ID_HERE",
     type: "page",
@@ -60,9 +60,9 @@ const body = JSON.stringify(payload);
 
 // ── Compute HMAC-SHA256 signature ────────────────────────────────────────────
 
-const hmac = crypto.createHmac("sha256", WEBHOOK_SECRET);
+const hmac = crypto.createHmac("sha256", VERIFICATION_TOKEN);
 hmac.update(body);
-const signature = hmac.digest("hex");
+const signature = "sha256=" + hmac.digest("hex");
 
 // ── Send request ─────────────────────────────────────────────────────────────
 

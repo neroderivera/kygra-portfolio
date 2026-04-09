@@ -8,7 +8,7 @@ import crypto from "node:crypto";
  *
  * Environment variables:
  *   NOTION_SECRET   – Notion internal integration token
- *   WEBHOOK_SECRET  – Notion webhook signing secret (HMAC-SHA256)
+ *   NOTION_VERIFICATION_TOKEN – Notion webhook verification token (HMAC-SHA256)
  *   GITHUB_TOKEN    – GitHub fine-grained PAT (Contents read+write)
  *   GITHUB_REPO     – owner/repo (e.g. "kygura/kygra-portfolio")
  */
@@ -18,10 +18,11 @@ import crypto from "node:crypto";
 function verifySignature(rawBody, signature, secret) {
   const hmac = crypto.createHmac("sha256", secret);
   hmac.update(rawBody);
-  const expected = hmac.digest("hex");
+  const expected = "sha256=" + hmac.digest("hex");
+  if (expected.length !== signature.length) return false;
   return crypto.timingSafeEqual(
-    Buffer.from(expected, "hex"),
-    Buffer.from(signature, "hex"),
+    Buffer.from(expected),
+    Buffer.from(signature),
   );
 }
 
@@ -291,12 +292,12 @@ export default async function handler(req, res) {
 
   const {
     NOTION_SECRET: notionSecret,
-    WEBHOOK_SECRET: webhookSecret,
+    NOTION_VERIFICATION_TOKEN: verificationToken,
     GITHUB_TOKEN: githubToken,
     GITHUB_REPO: githubRepo,
   } = process.env;
 
-  if (!notionSecret || !webhookSecret || !githubToken || !githubRepo) {
+  if (!notionSecret || !verificationToken || !githubToken || !githubRepo) {
     return res.status(500).json({ error: "Missing environment variables" });
   }
 
@@ -314,7 +315,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    if (!verifySignature(rawBody, signature, webhookSecret)) {
+    if (!verifySignature(rawBody, signature, verificationToken)) {
       return res.status(401).json({ error: "Invalid signature" });
     }
   } catch {
