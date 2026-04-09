@@ -265,6 +265,23 @@ function buildMarkdownFile(frontmatter, markdownBody) {
   ].join("\n");
 }
 
+// ── Raw body reader (Vercel bodyParser disabled) ─────────────────────────────
+
+function readRawBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => resolve(Buffer.concat(chunks)));
+    req.on("error", reject);
+  });
+}
+
+// Disable Vercel's automatic body parsing so we receive the raw bytes
+// for accurate HMAC-SHA256 signature verification.
+export const config = {
+  api: { bodyParser: false },
+};
+
 // ── Main handler ─────────────────────────────────────────────────────────────
 
 export default async function handler(req, res) {
@@ -283,14 +300,18 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Missing environment variables" });
   }
 
-  // 1. Verify webhook signature
+  // 1. Read raw body and verify webhook signature
   const signature = req.headers["x-notion-signature"];
   if (!signature) {
     return res.status(401).json({ error: "Missing signature" });
   }
 
-  const rawBody =
-    typeof req.body === "string" ? req.body : JSON.stringify(req.body);
+  let rawBody;
+  try {
+    rawBody = await readRawBody(req);
+  } catch {
+    return res.status(400).json({ error: "Could not read request body" });
+  }
 
   try {
     if (!verifySignature(rawBody, signature, webhookSecret)) {
@@ -301,7 +322,12 @@ export default async function handler(req, res) {
   }
 
   // 2. Parse payload
-  const payload = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+  let payload;
+  try {
+    payload = JSON.parse(rawBody.toString("utf-8"));
+  } catch {
+    return res.status(400).json({ error: "Invalid JSON body" });
+  }
   const pageId = payload?.entity?.id;
 
   if (!pageId) {
